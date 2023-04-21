@@ -1,3 +1,5 @@
+import Demo from '@/components/Demo';
+import Hero from '@/components/Hero';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 
@@ -13,6 +15,11 @@ export default function Home() {
 			<main>
 				<div className='main'>
 					<div className='gradient' />
+				</div>
+
+				<div className='app'>
+					<Hero />
+					<Demo />
 				</div>
 			</main>
 		</div>
