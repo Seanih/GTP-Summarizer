@@ -17,7 +17,8 @@ function Hero() {
 			</nav>
 
 			<h1 className='head_text'>
-				Summarize articles with <br /> <span>OpenAI GPT-4</span>
+				Summarize articles with <br />{' '}
+				<span className='orange_gradient'>OpenAI GPT-4</span>
 			</h1>
 		</header>
 	);
