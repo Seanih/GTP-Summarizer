@@ -17,9 +17,13 @@ function Hero() {
 			</nav>
 
 			<h1 className='head_text'>
-				Summarize articles with <br />{' '}
+				Summarize articles with <br className='max-md:hidden' />{' '}
 				<span className='orange_gradient'>OpenAI GPT-4</span>
 			</h1>
+			<h2 className='desc'>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid numquam
+				doloribus voluptatem est. Est rem a corporis atque officiis harum.
+			</h2>
 		</header>
 	);
 }
