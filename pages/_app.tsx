@@ -1,6 +1,8 @@
 import '@/styles/globals.css';
 import { Roboto } from 'next/font/google';
 import type { AppProps } from 'next/app';
+import { Provider } from 'react-redux';
+import { store } from '../services/store';
 
 const roboto = Roboto({
 	subsets: ['latin'],
@@ -9,8 +11,10 @@ const roboto = Roboto({
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<div className={roboto.className}>
-			<Component {...pageProps} />
-		</div>
+		<Provider store={store}>
+			<div className={roboto.className}>
+				<Component {...pageProps} />
+			</div>
+		</Provider>
 	);
 }

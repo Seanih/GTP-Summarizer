@@ -1,15 +1,21 @@
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use, FormEvent } from 'react';
 import { copy, linkIcon, loader, tick } from '../public/assets';
 
 function Demo() {
+	const [article, setArticle] = useState({ url: '', summary: '' });
+
+	const handleSubmit = async (e: FormEvent) => {
+		alert('submitted');
+	};
+
 	return (
 		<section className='w-full max-w-xl mt-16'>
-      {/* Search */}
+			{/* Search */}
 			<div className='flex flex-col w-full gap-2'>
 				<form
 					className='relative flex items-center justify-center'
-					onSubmit={() => {}}
+					onSubmit={handleSubmit}
 				>
 					<Image
 						src={linkIcon}
@@ -19,8 +25,8 @@ function Demo() {
 					<input
 						type='url'
 						placeholder='Enter URL'
-						value=''
-						onChange={() => {}}
+						value={article.url}
+						onChange={e => setArticle({ ...article, url: e.target.value })}
 						required
 						className='url_input peer'
 					/>
@@ -31,7 +37,7 @@ function Demo() {
 						↵
 					</button>
 				</form>
-        {/* Browser URL History */}
+				{/* Browser URL History */}
 			</div>
 		</section>
 	);
